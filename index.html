@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      #cvs {
+        box-shadow: 0 0 20px #333;
+        display: block;
+        margin: 20px auto 0;
+      }
+      #tip {
+        position: absolute;
+        width: 800px; height: 600px;
+        background: rgba(0,0,0,0.3);
+        top: 20px; left: 50%;
+        margin-left: -400px;
+      }
+      #tip dl {
+        width: 400px; height: 200px;
+        background: #fff;
+        margin: auto;
+        padding: 20px;
+        position: absolute;
+        left: 0; top: 0; right: 0; bottom: 0;
+        border-radius: 20px;
+        box-shadow: 0 0 20px #000;
+      }
+      #tip dt {
+        font-weight: bolder;
+        font-size: 30px;
+        line-height: 50px;
+      }
+      #tip dd {
+        font-size: 20px;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="cvs" width="800" height="600"></canvas>
+    <div id="tip">
+      <dl>
+        <dt>游戏说明：</dt>
+        <dd>1，按空格键开始或暂停游戏。</dd>
+        <dd>2，按上下左右方向键控制移动方向。</dd>
+      </dl>
+    </div>
+
+    <script src="js/snake.js"></script>
+    <script>
+      var canvas = document.getElementById('cvs');
+      var tips = document.getElementById('tip');
+      var cvs = canvas.getContext('2d');
+      
+      var snake = new Snake(40,40,20,20,cvs);
+      snake.draw([255,0,0]);
+      snake.init();
+
+    </script>
+  </body>
+</html>
